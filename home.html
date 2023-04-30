@@ -17,37 +17,38 @@
     <title>Meu primeiro site "cringe"</title>
     <style>
         :root {
-          --blue: orange;
-          --white: #ffffff; 
+            --blue: orange;
+            --white: #ffffff;
+            --fontSize: 1;
         }
-        
+
         @media (max-width: 679px) {
             * {
-                font-size: 0.8em;
+                font-size: calc(var(--fontSize) * 1em);
                 font-family: 'Courier New', Courier, monospace;
                 font-style: normal;
                 color: var(--blue)
             }
         }
-        
+
         @media (min-width: 679px) and (max-width: 879px) {
             * {
-                font-size: 0.9em;
+                font-size: calc(var(--fontSize) * 1em);
                 font-family: 'Courier New', Courier, monospace;
                 font-style: normal;
                 color: var(--blue)
             }
         }
-        
+
         @media (min-width: 879px) and (max-width: 1300px) {
             * {
-                font-size: 1.0em;
+                font-size: calc(var(--fontSize) * 1em);
                 font-family: 'Courier New', Courier, monospace;
                 font-style: normal;
                 color: var(--blue)
             }
         }
-        </style>
+    </style>
 </head>
 
 <body>
@@ -89,7 +90,18 @@
         var r = document.querySelector(':root');
         function testeMudandoVariavel() {
             console.log('testeMudandoVariavel')
+
+
+
             console.log(r.style)
+            var fontSize = r.style.getPropertyValue('--fontSize') ?? 1;
+            console.log({ fontSize })
+            if (fontSize == '') {
+                fontSize = 1
+            }
+            console.log({ fontSize })
+            r.style.setProperty('--fontSize', fontSize * 1 + 0.1);
+
             console.log(r.style.getPropertyValue('--blue'))
             r.style.setProperty('--blue', 'red');
             console.log(r.style)
