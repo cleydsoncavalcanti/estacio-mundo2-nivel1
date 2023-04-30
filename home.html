@@ -10,13 +10,15 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="shortcut icon" href="public/img/dasa_favicon_32px.png" type="image/png" />
+    <link href="node_modules/bootstrap/dist/css/bootstrap-grid.min.css" rel="stylesheet">
     <title>Meu primeiro site "cringe"</title>
 </head>
 
 <body>
+    <div w3-include-html="resources/views/header.html"></div>
     <header>
-        <h1>Título da página</h1>
-        <h2>Subtítulo da página</h2>
+        <h1 class="m-3 pt-3">Título da página</h1>
+        <h2 class="m-3 pt-3">Subtítulo da página</h2>
     </header>
     <section>
         <h3>Seção 1</h3>
@@ -39,6 +41,7 @@
             <li><a href=”#”>pagina 4</a></li>
         </ul>
     </nav>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
